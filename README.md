@@ -3,12 +3,15 @@
 Deploy OSTicket using Docker, Docker-Compose or Hashicorp Nomad.
 
 
+* [Provision OSticket with Docker](https://mpolinowski.github.io/docs/DevOps/Provisioning/2022-10-16--os-ticket-docker/2022-10-16)
+* [Hashicorp Nomad to set up an OSTicket Helpdesk - Part I](https://mpolinowski.github.io/docs/DevOps/Hashicorp/2022-10-21-hashicorp-nomad-for-osticket-part-i/2022-10-21)
+* [Hashicorp Nomad to set up an OSTicket Helpdesk - Part II](https://mpolinowski.github.io/docs/DevOps/Hashicorp/2022-10-25-hashicorp-nomad-for-osticket-part-ii/2022-10-25)
+* [OSticket REST API Calls](https://mpolinowski.github.io/docs/DevOps/Provisioning/2022-10-27--os-ticket-rest-api/2022-10-27)
+
+
 ## Docker
 
 [OSTicket recommends](https://docs.osticket.com/en/latest/Getting%20Started/Installation.html) to use the official Docker Image from [hub.docker.com](https://hub.docker.com/r/osticket/osticket/):
-
-
-[see step by step guide]()
 
 
 ```bash
@@ -23,9 +26,6 @@ docker run --name osticket -d --link osticket_mysql:mysql -p 8080:80 osticket/os
 ## Docker-Compose
 
 Both tasks - frontend and SQL backend - can be combined in a single `docker-compose.yml` file:
-
-
-[see step by step guide]()
 
 
 ```yml
@@ -79,10 +79,8 @@ networks:
 
 ## Hashicorp Nomad & Consul
 
-[step by step guide]()
 
-
-```json
+```bash
 job "osticket" {
   datacenters = ["mydatacenter"]
     group "osticket" {
