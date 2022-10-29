@@ -6,7 +6,7 @@ Deploy OSTicket using Docker, Docker-Compose or Hashicorp Nomad.
 * [Provision OSticket with Docker](https://mpolinowski.github.io/docs/DevOps/Provisioning/2022-10-16--os-ticket-docker/2022-10-16)
 * [Hashicorp Nomad to set up an OSTicket Helpdesk - Part I](https://mpolinowski.github.io/docs/DevOps/Hashicorp/2022-10-21-hashicorp-nomad-for-osticket-part-i/2022-10-21)
 * [Hashicorp Nomad to set up an OSTicket Helpdesk - Part II](https://mpolinowski.github.io/docs/DevOps/Hashicorp/2022-10-25-hashicorp-nomad-for-osticket-part-ii/2022-10-25)
-* [OSticket REST API Calls](https://mpolinowski.github.io/docs/DevOps/Provisioning/2022-10-27--os-ticket-rest-api/2022-10-27)
+* [OSTicket REST API Calls](https://mpolinowski.github.io/docs/DevOps/Provisioning/2022-10-27--os-ticket-rest-api/2022-10-27)
 
 
 ## Docker
