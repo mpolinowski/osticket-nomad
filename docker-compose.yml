@@ -1,0 +1,45 @@
+version: '3.8'
+services:
+
+  osticket-app:
+    image: osticket/osticket:latest
+    container_name: osticket
+    volumes:
+      - type: bind
+        source: ./src/include/i18n/de.phar
+        target: /var/www/src/public/include/i18n/de.phar
+        read_only: true
+    environment:
+      - CONTAINER_NAME=osticket
+      - MYSQL_USER=osticket
+      - MYSQL_HOST=osticket-db
+      - MYSQL_PASSWORD=secret
+      - MYSQL_DATABASE=osticket
+    ports:
+      - 8080:80
+    depends_on:
+      - osticket-db
+    networks:
+      - services
+    links:
+      - osticket-db
+    restart: unless-stopped
+
+  osticket-db:
+    image: mariadb:latest
+    container_name: osticket-db
+    volumes:
+      - /opt/osticket/db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_USER=osticket
+      - MYSQL_PASSWORD=secret
+      - MYSQL_DATABASE=osticket
+      - CONTAINER_NAME=osticket-db
+    networks:
+      - services
+    restart: unless-stopped
+
+networks:
+  services:
+    external: false 
